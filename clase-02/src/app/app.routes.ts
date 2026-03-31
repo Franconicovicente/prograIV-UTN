@@ -17,8 +17,16 @@ export const routes: Routes = [
         loadComponent: () => import("./pages/bienvenida/bienvenida").then((module) => module.Bienvenida)
     },
     
+
+    
+    /*
+    ------------------ 
+    Rutas Hijas
+    ------------------ 
+    */
+   
     {
-        path: 'auth',
+        path: 'auth', 
         children: [
             {
                 path: "login",
