@@ -1,9 +1,11 @@
 import { Routes } from '@angular/router';
-import { Login } from './pages/login/login';
+import { Login } from './pages/auth/login/login';
+import { Auth } from './pages/auth/auth';
+
 // import { Bienvenida } from './pages/bienvenida/bienvenida';
 // import { Error } from './pages/error/error';
 // import { Login } from './pages/login/login';
-import { Registro } from './pages/registro/registro';
+import { Registro } from './pages/auth/registro/registro';
 
 export const routes: Routes = [
     {
@@ -26,6 +28,7 @@ export const routes: Routes = [
     */
    
     {
+<<<<<<< HEAD
         path: 'auth', 
         children: [
             {
@@ -39,6 +42,11 @@ export const routes: Routes = [
             },
 
         ]
+=======
+        path: 'auth',
+        loadComponent: () => import("./pages/auth/auth").then((module) => module.Auth),
+        loadChildren: () => import("./pages/auth/auth.routes").then((routes) => routes.authRoutes),
+>>>>>>> 2dee6c8fecb959c3da085d9ba46cfed90f10b0c6
     },
 
     // {
@@ -51,6 +59,8 @@ export const routes: Routes = [
     //     loadComponent: () => import("./pages/registro/registro").then((module) => module.Registro)
     // },
 
+
+     // WILDCARD
     {
         path: "**", //Cualquier ruta no definida
         loadComponent: () => import("./pages/error/error").then((module) => module.Error)
