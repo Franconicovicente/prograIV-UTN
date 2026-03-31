@@ -28,6 +28,10 @@ export const routes: Routes = [
         loadComponent: () => import("./pages/auth/auth").then((module) => module.Auth),
         loadChildren: () => import("./pages/auth/auth.routes").then((routes) => routes.authRoutes),
     },
+    {
+        path: 'usuarios',
+        loadComponent: () => import("./pages/usuarios/usuarios").then((module) => module.Usuarios),
+    },
 
      // WILDCARD
     {

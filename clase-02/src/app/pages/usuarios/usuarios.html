@@ -1,0 +1,22 @@
+<p>usuarios works!</p>
+
+
+<!-- if / else - for - switch -->
+
+<p>Hay {{usuarios.length}} usuarios</p>
+
+@if (usuarios.length >= 3) {
+    <p>Hay más de 2 usuarios (Total: {{ usuarios.length }})</p>
+} @else {
+    <p>Hay menos de 2 usuarios (Total: {{usuarios.length}})</p>
+}
+
+<p>
+    {{usuarios.length > 2 ? 'Hay muchos usuarios' : 'Hay pocos usuarios'}}
+</p>
+
+@for (usr of usuarios; track usr.nombre; let i =$index){
+    <div>
+        <p> {{i + 1}} - {{usr.nombre}} es {{usr.perfil}} </p>
+    </div>
+}
