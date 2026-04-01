@@ -14,22 +14,27 @@ export class Usuarios {
     {
       nombre: 'Agus',
       perfil: 'Profesor',
+      edad: 30,
     },
     {
       nombre: 'Franco',
       perfil: 'Estudiante',
+      edad: 20,
     },
     {
       nombre: 'Carlos',
       perfil: 'Estudiante',
+      edad: 60,
     },
     {
       nombre: 'Silvia',
       perfil: 'Estudiante',
+      edad: 40,
     },
     {
       nombre: 'Mari',
       perfil: 'Estudiante',
+      edad: 18,
     },
     
 

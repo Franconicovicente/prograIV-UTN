@@ -17,6 +17,9 @@
 
 @for (usr of usuarios; track usr.nombre; let i =$index){
     <div>
-        <p> {{i + 1}} - {{usr.nombre}} es {{usr.perfil}} </p>
+        <p> {{i + 1}} - {{usr.nombre}} es {{usr.perfil}} y tiene {{usr.edad}} años </p>
+        <!-- @if (usr.edad > 30){
+            <p>ya esta viejo</p>
+        } -->
     </div>
 }
