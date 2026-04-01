@@ -1,7 +1,5 @@
 import { Routes } from '@angular/router';
-import { Login } from './pages/auth/login/login';
-import { Auth } from './pages/auth/auth';
-import { Registro } from './pages/auth/registro/registro';
+import { Usuarios } from './pages/usuarios/usuarios';
 
 export const routes: Routes = [
     {
@@ -31,6 +29,12 @@ export const routes: Routes = [
     {
         path: 'usuarios',
         loadComponent: () => import("./pages/usuarios/usuarios").then((module) => module.Usuarios),
+    },
+
+    {path: 'usuarios/:id', redirectTo: 'usuarios/:id', pathMatch: 'prefix'},
+    {
+        path: 'usuarios/:id',
+        component: Usuarios
     },
 
      // WILDCARD
