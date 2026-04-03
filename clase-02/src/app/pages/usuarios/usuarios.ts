@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject, OnInit, OnChanges, DoCheck } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-usuarios',
@@ -39,5 +40,24 @@ export class Usuarios {
     
 
 
-  ]
+  ];
+
+  usuarioActual = 0;
+
+  private   activatedRoute = inject(ActivatedRoute);
+
+
+  ngOnInit(): void {
+    // Se llama despues del constructor, inicializando propiedades de 
+    // inputs, y la primer llamada a ngOnChanges
+    console.log('Se instancia el componente usuarios');
+    const id = this.activatedRoute.snapshot.paramMap.get("id");
+    
+    if (id) {
+      this.usuarioActual = parseInt(id);
+    }
+
+  }
+
+
 }
